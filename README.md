@@ -3,4 +3,5 @@
 Here, we used one of PaySim’s public datasets available on the Kaggle website. Using this synthetic data, we aim to understand better all the features related to fraudulent profit by data analysis. To enhance the accuracy of predictive models, we implemented different machine learning models to generate better predictions on frauds and evaluated each of their performances.
 
 • [Data used for analysis](https://www.kaggle.com/ntnu-testimon/paysim1)
+<br>
 • Reference: E. A. Lopez-Rojas , A. Elmir, and S. Axelsson. "PaySim: A financial mobile money simulator for fraud detection". In: The 28th European Modeling and Simulation Symposium-EMSS, Larnaca, Cyprus. 2016
