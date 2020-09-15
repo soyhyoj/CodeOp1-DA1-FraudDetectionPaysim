@@ -8,6 +8,9 @@ Using this synthetic data, we aim to understand better all the features related 
 
 
 
+## Download the data from [here](https://www.kaggle.com/ntnu-testimon/paysim1) and save under "./data"
+
+
 ## Build the docker image
 
 ```
