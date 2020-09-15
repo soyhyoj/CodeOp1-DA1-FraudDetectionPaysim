@@ -20,7 +20,6 @@ docker build -t da-paysim .
 docker run -it --rm \
     -p 8888:8888 \
     -v $(pwd)/notebooks:/home/jovyan/notebooks \
-    -v $(pwd)/data:/data/ \
     da-paysim \
     jupyter notebook --notebook-dir /home/jovyan/notebooks
 ```
