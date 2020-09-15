@@ -4,3 +4,23 @@
 Using this synthetic data, we aim to understand better all the features related to fraudulent profit by data analysis and make good predictions on the unseen data based on our findings. To enhance prediction performance, we implemented different machine learning algorithms and evaluated each model.
 
 • Reference: E. A. Lopez-Rojas , A. Elmir, and S. Axelsson. "PaySim: A financial mobile money simulator for fraud detection". In: The 28th European Modeling and Simulation Symposium-EMSS, Larnaca, Cyprus. 2016
+
+
+
+
+## Build the docker image
+
+```
+docker build -t da-paysim .
+```
+
+## Run notebook server in docker
+
+```bash
+docker run -it --rm \
+    -p 8888:8888 \
+    -v $(pwd)/notebooks:/home/jovyan/notebooks \
+    -v $(pwd)/data:/data/ \
+    da-paysim \
+    jupyter notebook --notebook-dir /home/jovyan/notebooks
+```
