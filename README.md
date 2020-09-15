@@ -9,10 +9,9 @@ Using this synthetic data, we aim to understand better all the features related 
 
 
 ## Download the data
-```
 Data is available as .CSV format.
 Save the file under "./data" directory
-```
+
 
 ## Build the docker image
 
