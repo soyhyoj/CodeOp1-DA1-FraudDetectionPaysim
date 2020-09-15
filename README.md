@@ -8,8 +8,11 @@ Using this synthetic data, we aim to understand better all the features related 
 
 
 
-## Download the data from [here](https://www.kaggle.com/ntnu-testimon/paysim1) and save under "./data"
-
+## Download the data
+```
+Data is available at [here](https://www.kaggle.com/ntnu-testimon/paysim1) as .CSV format.
+Save the file under "./data" directory
+```
 
 ## Build the docker image
 
@@ -23,6 +26,7 @@ docker build -t da-paysim .
 docker run -it --rm \
     -p 8888:8888 \
     -v $(pwd)/notebooks:/home/jovyan/notebooks \
+    -v $(pwd)/data:/data/ \
     da-paysim \
     jupyter notebook --notebook-dir /home/jovyan/notebooks
 ```
