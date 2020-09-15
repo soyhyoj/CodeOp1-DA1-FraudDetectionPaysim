@@ -9,7 +9,7 @@ Using this synthetic data, we aim to understand better all the features related 
 
 
 ## Download the data
-Data is available as .CSV format.
+Data is available at [here](https://www.kaggle.com/ntnu-testimon/paysim1) as ".CSV" format.
 Save the file under "./data" directory
 
 
