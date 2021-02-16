@@ -8,10 +8,19 @@ head(paysim)
 # Print the dimension (.shape() in Python) of the dataframe
 dim(paysim)
 
+
 # Summary statistics of the dataframe (.describe() in Python)
 summary(paysim)
 # or use one of many libraries like dplyr
 
-# install new packages within conda
+
+# Import skimr packages to display additional summary info including missing values
 library(skimr)
-skim(df)
+skim(paysim)
+
+#
+library(inspectdf)
+inspect_na(paysim)
+
+# Numeric variables inspection
+inspect_num(paysim, show_plot = TRUE)
