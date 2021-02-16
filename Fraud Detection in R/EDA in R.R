@@ -10,7 +10,8 @@ dim(paysim)
 
 # Summary statistics of the dataframe (.describe() in Python)
 summary(paysim)
-# or use one of many libraries like psych
-library(psych)
-psych::describe(paysim)
+# or use one of many libraries like dplyr
 
+# install new packages within conda
+library(skimr)
+skim(df)
