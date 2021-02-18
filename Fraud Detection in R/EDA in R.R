@@ -26,11 +26,12 @@ show_plot(inspect_na(paysim))
 
 # Numeric variables inspection
 show_plot(inspect_num(paysim))
-# show_plot argument not working... Display histrograms here
 
 # Categorical variable
 inspect_imb(paysim)
 inspect_cat(paysim)
+
+# Try dataexplorer
 
 ######################################################################################
 # How many fraudulent transactions(= our target) are there? 
@@ -38,13 +39,41 @@ df_isFraud <- dplyr::filter(paysim, isFraud == 1)
 df_notFraud <- dplyr::filter(paysim, isFraud == 0)
 show_plot(inspect_mem(df_isFraud, df_notFraud))
 show_plot(inspect_cat(df_isFraud, df_notFraud))
+
 ######################################################################################
 # Correlation of columns
 show_plot(inspect_cor(paysim))
 show_plot(inspect_cor(df_isFraud))
 
-# Heatmap?
+# Compute a correlation matrix
+cor(paysim)
+
+# This doesn't work because the dataframe as a column with string values
+# Every columns should be converted to numeric to calculate the pearson's r
+# Let's skip this for now
+
+# A countplot of transaction types
+library(ggplot2)
+ggplot(paysim, aes(type), Freq) + geom_bar(fill="blue")
+
+# A function to look for names appeared in any fraudulent transaction
+
+
+
+
+
+# Now, let's compute the correlation matrix
+cor(paysim)
+corr <- round(cor(paysim), 1)
+head(corr[, 1:6])
+
+# Heatmap
 library(ggcorrplot)
+ggcorrplot(corr, outline.color="white")
+
 ######################################################################################
 ######################################################################################
 ######################################################################################
+
+
+
