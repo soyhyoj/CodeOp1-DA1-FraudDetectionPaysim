@@ -50,14 +50,37 @@ cor(paysim)
 
 # This doesn't work because the dataframe as a column with string values
 # Every columns should be converted to numeric to calculate the pearson's r
-# Let's skip this for now
+# Let's skip this part for now
 
 # A countplot of transaction types
 library(ggplot2)
 ggplot(paysim, aes(type), Freq) + geom_bar(fill="blue")
+# Value counts
+paysim %>%
+  count(type)
 
-# A function to look for names appeared in any fraudulent transaction
+# A function to check names appeared in any fraudulent transaction
+get_balance_difference <-function (df, old_col, new_col){
+  # Difference in old-balance and new-balance columns
+  # R does math in a matrix element-wise.
+  matrix(df$old_col) - matrix(df$new_col)
+}
+matrix(paysim$oldbalanceOrg) - paysim$newbalanceOrg
+paysim$diffOrg <- get_balance_difference(paysim, oldbalanceOrg, newbalanceOrig)
+head(paysim)
 
+# If transaction amount is not equal to the difference in balances of origin
+get_suspicious_names() <- function(df, col)
+  suspicious_names <- list()
+  for (name in df$nameOrig)
+    if (df$amount != Difference_Orig)
+      suspicious_names <- name
+
+    suspicious_names += [name for name in data.nameDest if name not in suspicious_names]
+  print(f'Fraud alert!!!')
+  return list(set(suspicious_names)) 
+  
+}
 
 
 
