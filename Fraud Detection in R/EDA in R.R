@@ -34,9 +34,10 @@ inspect_cat(paysim)
 # Try dataexplorer
 
 ######################################################################################
-# How many fraudulent transactions(= our target) are there? 
+# How many fraudulent transactions(= our target) are there?
 df_isFraud <- dplyr::filter(paysim, isFraud == 1)
 df_notFraud <- dplyr::filter(paysim, isFraud == 0)
+
 show_plot(inspect_mem(df_isFraud, df_notFraud))
 show_plot(inspect_cat(df_isFraud, df_notFraud))
 
@@ -52,6 +53,7 @@ ggplot(paysim, aes(type), Freq) + geom_bar(fill="blue")
 paysim %>%
   count(type)
 
+
 # To check names appeared in any fraudulent transaction
 # First: create a column indicating differences in balances
 paysim %>%
@@ -60,12 +62,9 @@ paysim %>%
 
 # Second: if transaction amount is not equal to the difference in balances
 # get the names involved in the transaction
-get_suspicious_names() <- function(df, col){
-  
+for(i in dim(df_isFraud)[1]){
+  df_isFraud[i,nameOrig]
 }
-
-
-
 
 
 ######################################################################################
