@@ -56,16 +56,14 @@ paysim %>%
 
 # To check names appeared in any fraudulent transaction
 # First: create a column indicating differences in balances
-paysim %>%
-  mutate(diffOrig = oldbalanceOrg - newbalanceOrig,
-         diffDest = oldbalanceDest - newbalanceDest)
-
 # Second: if transaction amount is not equal to the difference in balances
 # get the names involved in the transaction
-for(i in dim(df_isFraud)[1]){
-  df_isFraud[i,nameOrig]
-}
-
+paysim %>%
+  mutate(diffOrig = oldbalanceOrg - newbalanceOrig,
+         diffDest = oldbalanceDest - newbalanceDest) %>%
+         {. ->> intermediateResult} %>%
+  filter(amount != diffOrig && amount != diffDest)
+  
 
 ######################################################################################
 ######################################################################################
